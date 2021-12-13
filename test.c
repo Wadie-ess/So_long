@@ -21,24 +21,21 @@ int main()
     //int color = 0xABCDEF;
     void *instance;
     t_data image;
+    char	*relative_path = "main.xpm";
+    void *img;
+    int		img_width = 30;
+	int		img_height = 20;
+    
 
+    
     instance = (void *)mlx_init();
+    img = mlx_xpm_file_to_image(instance, relative_path, &img_width, &img_height);
     void *mlx = mlx_new_window(instance, 1080,720, "a7a");
-    image.img = mlx_new_image(instance, 1920, 1080);
-    image.addr = mlx_get_data_addr(image.img, &image.bits_per_pixel, &image.line_length, &image.endian);
-    my_mlx_pixel_put(&image, 5, 5, 0x00FF0000);
-    mlx_put_image_to_window(instance,mlx,image.img, 0, 0);
+    //image.img = mlx_new_image(instance, 1920, 1080);
+    //image.addr = mlx_get_data_addr(image.img, &image.bits_per_pixel, &image.line_length, &image.endian);
+    //my_mlx_pixel_put(&image, 5, 5, 0x00FF0000);
+    mlx_put_image_to_window(instance,mlx,img, 0, 0);
     mlx_loop(instance);
-
-
-  
-   // mlx_pixel_put(instance, mlx, 400, 500,color );
-
-  // 
-   
-
-  
-
 }
 
 
