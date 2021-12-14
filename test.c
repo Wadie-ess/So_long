@@ -19,60 +19,55 @@
     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
     *(unsigned int *)dst = color;
 } */
- void ft_draw_img(t_game *game, char c, int i, int j)
+void ft_draw_img( char c, int i, int j)
 {
     int h;
     int w;
     void *img;
     char *file;
+    void *mlx;
+    mlx = mlx_init();
     file = NULL;
-    if(c == 'P')
+    if (c == 'P')
         file = SPODY;
-    if(c == 'C')
+    if (c == 'C')
         file = SOPU;
-    if(c == '0')
+    if (c == '0')
         file = BACKGROUND;
-    if(c == '1')
+    if (c == '1')
         file = WALL;
-    if(c == 'E')
+    if (c == 'E')
         file = WALL;
-    
-    img  = mlx_xpm_file_to_image(game->mlx->mlx, file, &w, &h);
+
+
+    img = mlx_xpm_file_to_image(mlx, file, &w, &h);
+    void *mlx_wen = mlx_new_window(mlx, 1080, 720, "a7a");
     w = BLOCK_SIZE * i;
     h = BLOCK_SIZE * j;
-    mlx_put_image_to_window(game->mlx->mlx, game->mlx->mlx_window,img, w,h);
-    mlx_destroy_image(game->mlx->mlx, img);
+    mlx_put_image_to_window(mlx, mlx_wen, img, w, h);
+    mlx_loop(mlx);
 }
-void ft_draw_map(t_game *game)
+void ft_draw_map()
 {
-    int i = 0;
+    int i = -1;
     int j = 0;
     int lines_count = ft_count_lines();
     int chars_count = ft_count_lines();
     char **map;
     map = ft_getmap();
-    while (i < lines_count)
+    while (++i < lines_count)
     {
-        while (j < chars_count)
-        {
-            ft_
-            j++;
-        }
-        
-        i++;
+        j = -1;
+        while (++j < chars_count)
+            ft_draw_img(map[i][j], j, i);
     }
-    
-    
-
-
-
 }
 
 int main()
 {
-   
 
-  /*   void *instance;
+    ft_draw_map();
+    /*   void *instance;
   //  t_data image;
     char *relative_path = "assets/wall.xpm";
     void *img;
