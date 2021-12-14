@@ -6,11 +6,12 @@
 /*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 14:15:26 by oessendo          #+#    #+#             */
-/*   Updated: 2021/12/13 21:13:12 by oessendo         ###   ########.fr       */
+/*   Updated: 2021/12/14 22:11:56 by oessendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "so_long.h"
 
 size_t	ft_strlen(const char *str)
 

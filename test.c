@@ -1,6 +1,8 @@
 #include <mlx.h>
+#include "so_long.h"
+
 ///// put pixel dyali
-typedef struct s_data
+/* typedef struct s_data
 {
     void *img;
     char *addr;
@@ -8,22 +10,71 @@ typedef struct s_data
     int line_length;
     int endian;
 } t_data;
+ */
 
-void my_mlx_pixel_put(t_data *data, int x, int y, int color)
+/* void my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
     char *dst;
 
     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
     *(unsigned int *)dst = color;
-}
-int main()
+} */
+ void ft_draw_img(t_game *game, char c, int i, int j)
 {
+    int h;
+    int w;
+    void *img;
+    char *file;
+    file = NULL;
+    if(c == 'P')
+        file = SPODY;
+    if(c == 'C')
+        file = SOPU;
+    if(c == '0')
+        file = BACKGROUND;
+    if(c == '1')
+        file = WALL;
+    if(c == 'E')
+        file = WALL;
+    
+    img  = mlx_xpm_file_to_image(game->mlx->mlx, file, &w, &h);
+    w = BLOCK_SIZE * i;
+    h = BLOCK_SIZE * j;
+    mlx_put_image_to_window(game->mlx->mlx, game->mlx->mlx_window,img, w,h);
+    mlx_destroy_image(game->mlx->mlx, img);
+}
+void ft_draw_map(t_game *game)
+{
+    int i = 0;
+    int j = 0;
+    int lines_count = ft_count_lines();
+    int chars_count = ft_count_lines();
+    char **map;
+    map = ft_getmap();
+    while (i < lines_count)
+    {
+        while (j < chars_count)
+        {
+            ft_
+            j++;
+        }
+        
+        i++;
+    }
+    
     
 
-    //int color = 0xABCDEF;
-    void *instance;
-    t_data image;
-    char *relative_path = "main.xpm";
+
+
+}
+
+int main()
+{
+   
+
+  /*   void *instance;
+  //  t_data image;
+    char *relative_path = "assets/wall.xpm";
     void *img;
     int img_width;
     int img_height;
@@ -37,5 +88,5 @@ int main()
     mlx_put_image_to_window(instance, mlx, img, 100, 20);
     mlx_put_image_to_window(instance, mlx, img, 330, 20);
     mlx_put_image_to_window(instance, mlx, img, 530, 20);
-    mlx_loop(instance);
+    mlx_loop(instance);  */
 }

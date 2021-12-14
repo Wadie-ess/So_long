@@ -1,46 +1,54 @@
 #include "get_next_line.h"
-#include <string.h>
-#include <stdio.h>
-#include <fcntl.h>
+#include "so_long.h"
+
+int ft_count_chars()
+{
+    int i;
+    i = 0;
+    int fd2;
+    fd2 = open("maps/map.ber", O_RDONLY);
+    i = ft_strlen(get_next_line(fd2));
+    close(fd2);
+    return 13;
+}
+
 int ft_count_lines()
 {
     int line_count;
     line_count = 0;
     int fd;
-    fd = open("map.ber", O_RDONLY);
-    while (get_next_line(fd) != NULL)
+    fd = open(MAP_PATH, O_RDONLY);
+    while (get_next_line(fd))
         line_count++;
+    close(fd);
     return line_count;
 }
-
-int main()
+char **ft_getmap()
 {
-
-    int line_count;
-    int colum_count;
-    int i;
-    int j;
-    i = 0;
-    int reded;
-    line_count = ft_count_lines();
-    //colum_count = ft_count_chars();
-    int fd = open("map.ber", O_RDONLY);
-     //int fd2 = open("map.ber", O_RDONLY);
     char **map;
+    int line_count;
+    int fd;
+    int i;
+    i = 0;
+    fd = open("maps/map.ber", O_RDONLY);
+    line_count = ft_count_lines();
     map = malloc(line_count * sizeof(char *));
     while (i < line_count)
-    {   
+    {
         map[i] = get_next_line(fd);
         i++;
     }
-    i = 0;
-
-    while (i < line_count)
-    {
-        printf("%s",map[i]);
-        i++;
-    }
-    
-    printf("len dyal l file is %d", colum_count);
-    printf("che7al mn star is %d", line_count);
+    close(fd);
+    return map;
 }
+// test
+/* int main()
+{
+    int i = 0;
+    char **map;
+    map = getmap();
+    printf("%s", map[0]);
+    printf("%s", map[1]);
+    printf("%s", map[2]);
+    printf("%s", map[3]);
+} */
