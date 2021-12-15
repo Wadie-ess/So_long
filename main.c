@@ -10,9 +10,9 @@ int main()
     height = lines_count * BLOCK_SIZE;
     width = chars_count * BLOCK_SIZE;
     void *mlx = mlx_init();
-    void *mlx_window = mlx_new_window(mlx, width, height, "a7a");
+    void *mlx_window = mlx_new_window(mlx ,width, height, "a7a");
 
-    ft_draw_map(mlx, mlx_window);
+    ft_draw_map(lines_count, chars_count, mlx, mlx_window);
     mlx_loop(mlx);
 
     return (0);

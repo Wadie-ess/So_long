@@ -1,4 +1,5 @@
 #include "so_long.h"
+
 void ft_draw_img(void *mlx, void *mlx_window, char c, int i, int j)
 {
     t_game *game;
@@ -25,19 +26,19 @@ void ft_draw_img(void *mlx, void *mlx_window, char c, int i, int j)
     mlx_destroy_image(mlx, img);
 }
 
-void ft_draw_map(void *mlx, void *mlx_window)
+void ft_draw_map(int lines, int chars, void *mlx, void *mlx_window)
 {
     int i = -1;
     int j = 0;
     char **map;
-    int lines_count = ft_count_lines();
-    int chars_count = ft_count_chars();
+    int lines_count = lines;
+    int chars_count = chars;
     map = ft_getmap();
     mlx_clear_window(mlx, mlx_window);
-    while (++i < 4)
+    while (++i < lines)
     {
         j = -1;
-        while (++j < 13)
+        while (++j < chars)
             ft_draw_img(mlx, mlx_window, map[i][j], j, i);
     }
 }

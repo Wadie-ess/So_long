@@ -9,7 +9,7 @@ int ft_count_chars()
     fd2 = open("maps/map.ber", O_RDONLY);
     i = ft_strlen(get_next_line(fd2));
     close(fd2);
-    return i - 1;
+    return i-1;
 }
 
 int ft_count_lines()

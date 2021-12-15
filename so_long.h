@@ -19,7 +19,7 @@
 
 int ft_count_chars();
 int ft_count_lines();
-void ft_draw_map(void *mlx, void *mlx_window);
+void ft_draw_map(int lines, int chars, void *mlx, void *mlx_window);
 char **ft_getmap();
 
 
