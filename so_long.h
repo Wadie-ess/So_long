@@ -26,7 +26,7 @@ typedef struct s_mlx
 	void	*mlx_window;
 }t_mlx;
 
-typedef struct s_game
+typedef struct s_data
 {
 	char	**map;
 	int		move_count;
@@ -38,10 +38,10 @@ typedef struct s_game
 	int		e_y;
 	int		n_coins;
 	t_mlx	*mlx;
-}t_game;
+}t_data;
 
 int ft_count_chars();
 int ft_count_lines();
-void ft_draw_map(t_game *game);
+void ft_draw_map(t_data *data);
 char **ft_getmap();
 #endif
