@@ -19,14 +19,13 @@
     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
     *(unsigned int *)dst = color;
 } */
-void ft_draw_img( char c, int i, int j)
+void ft_draw_img(void *mlx, void* mlx_window, char c, int i, int j)
 {
+    t_game *game;
     int h;
     int w;
     void *img;
     char *file;
-    void *mlx;
-    mlx = mlx_init();
     file = NULL;
     if (c == 'P')
         file = SPODY;
@@ -41,32 +40,49 @@ void ft_draw_img( char c, int i, int j)
 
 
     img = mlx_xpm_file_to_image(mlx, file, &w, &h);
-    void *mlx_wen = mlx_new_window(mlx, 1080, 720, "a7a");
-    w = BLOCK_SIZE * i;
-    h = BLOCK_SIZE * j;
-    mlx_put_image_to_window(mlx, mlx_wen, img, w, h);
-    mlx_loop(mlx);
+	w = BLOCK_SIZE * i;
+	h = BLOCK_SIZE * j;
+	mlx_put_image_to_window(mlx, mlx_window, img, w, h);
+	mlx_destroy_image(mlx, img);
 }
-void ft_draw_map()
+
+ void ft_draw_map(void *mlx, void *mlx_window)
 {
     int i = -1;
     int j = 0;
-    int lines_count = ft_count_lines();
-    int chars_count = ft_count_lines();
     char **map;
     map = ft_getmap();
-    while (++i < lines_count)
+    mlx_clear_window(mlx, mlx_window);
+    while (++i < 4)
     {
         j = -1;
-        while (++j < chars_count)
-            ft_draw_img(map[i][j], j, i);
+        while (++j < 13)
+            ft_draw_img(mlx, mlx_window,map[i][j], j, i);
     }
-}
+} 
+
+
+
+
+
 
 int main()
 {
+    int		width;
+	int		height;
 
-    ft_draw_map();
+   
+
+   int lines_count = 4;
+   int chars_count = 13;
+   height = lines_count * BLOCK_SIZE;
+   width = chars_count * BLOCK_SIZE;
+       void *mlx = mlx_init();
+   void *mlx_window = mlx_new_window(mlx, width, height, "a7a");
+
+
+    ft_draw_map(mlx, mlx_window);
+    mlx_loop(mlx);
     /*   void *instance;
   //  t_data image;
     char *relative_path = "assets/wall.xpm";
