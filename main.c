@@ -27,19 +27,18 @@ int main()
 {   
     t_game *game;
     t_mlx  *mlx;
-    game = malloc(sizeof(t_game));
-    mlx = malloc(sizeof(t_mlx));
     int width;
     int height;
+    game = malloc(sizeof(t_game));
+    mlx = malloc(sizeof(t_mlx));
     ft_set_map(MAP_PATH, game);
-    //char **map = game->map;
-   // printf("%d",game->chars_count);
     height = game->lines_count * BLOCK_SIZE;
     width = game->chars_count * BLOCK_SIZE;
     mlx->mlx = mlx_init();
     mlx->mlx_window = mlx_new_window(mlx->mlx,width, height, "a7a");
+    game->mlx = mlx;
 
-    ft_draw_map(game->lines_count, game->chars_count, mlx->mlx, mlx->mlx_window);
+    ft_draw_map(game);
     mlx_loop(mlx->mlx);
 
     return (0);  
