@@ -1,4 +1,3 @@
-#include <mlx.h>
 #include "so_long.h"
 
 ///// put pixel dyali
@@ -19,7 +18,7 @@
     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
     *(unsigned int *)dst = color;
 } */
-void ft_draw_img(void *mlx, void* mlx_window, char c, int i, int j)
+void ft_draw_img(void *mlx, void *mlx_window, char c, int i, int j)
 {
     t_game *game;
     int h;
@@ -38,48 +37,41 @@ void ft_draw_img(void *mlx, void* mlx_window, char c, int i, int j)
     if (c == 'E')
         file = WALL;
 
-
     img = mlx_xpm_file_to_image(mlx, file, &w, &h);
-	w = BLOCK_SIZE * i;
-	h = BLOCK_SIZE * j;
-	mlx_put_image_to_window(mlx, mlx_window, img, w, h);
-	mlx_destroy_image(mlx, img);
+    w = BLOCK_SIZE * i;
+    h = BLOCK_SIZE * j;
+    mlx_put_image_to_window(mlx, mlx_window, img, w, h);
+    mlx_destroy_image(mlx, img);
 }
 
- void ft_draw_map(void *mlx, void *mlx_window)
+void ft_draw_map(void *mlx, void *mlx_window)
 {
     int i = -1;
     int j = 0;
     char **map;
+    int lines_count = ft_count_lines();
+    int chars_count = ft_count_chars();
     map = ft_getmap();
     mlx_clear_window(mlx, mlx_window);
     while (++i < 4)
     {
         j = -1;
         while (++j < 13)
-            ft_draw_img(mlx, mlx_window,map[i][j], j, i);
+            ft_draw_img(mlx, mlx_window, map[i][j], j, i);
     }
-} 
-
-
-
-
-
+}
 
 int main()
 {
-    int		width;
-	int		height;
+    int width;
+    int height;
 
-   
-
-   int lines_count = 4;
-   int chars_count = 13;
-   height = lines_count * BLOCK_SIZE;
-   width = chars_count * BLOCK_SIZE;
-       void *mlx = mlx_init();
-   void *mlx_window = mlx_new_window(mlx, width, height, "a7a");
-
+    int lines_count = ft_count_lines();
+    int chars_count = ft_count_chars();
+    height = lines_count * BLOCK_SIZE;
+    width = chars_count * BLOCK_SIZE;
+    void *mlx = mlx_init();
+    void *mlx_window = mlx_new_window(mlx, width, height, "a7a");
 
     ft_draw_map(mlx, mlx_window);
     mlx_loop(mlx);

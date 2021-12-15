@@ -9,7 +9,7 @@ int ft_count_chars()
     fd2 = open("maps/map.ber", O_RDONLY);
     i = ft_strlen(get_next_line(fd2));
     close(fd2);
-    return 13;
+    return i - 1;
 }
 
 int ft_count_lines()
@@ -41,14 +41,3 @@ char **ft_getmap()
     close(fd);
     return map;
 }
-// test
-/* int main()
-{
-    int i = 0;
-    char **map;
-    map = getmap();
-    printf("%s", map[0]);
-    printf("%s", map[1]);
-    printf("%s", map[2]);
-    printf("%s", map[3]);
-} */
