@@ -29,17 +29,21 @@ int main()
     t_mlx *mlx;
     int window_width;
     int window_height;
+   
     data = malloc(sizeof(t_data));
     mlx = malloc(sizeof(t_mlx));
     ft_set_map(MAP_PATH, data);
+       if(validate_map(data) == 0)
+        return 0;
     window_height = data->lines_count * BLOCK_SIZE;
     window_width = data->chars_count * BLOCK_SIZE;
-    mlx->mlx = mlx_init();
+    //printf("%d",data->p_y);
+     mlx->mlx = mlx_init();
     mlx->mlx_window = mlx_new_window(mlx->mlx, window_width, window_height, "a7a");
     data->mlx = mlx;
-
+    mlx_hook(mlx->mlx_window, 2, 1L << 0, ft_hook, data);
     ft_draw_map(data);
-    mlx_loop(mlx->mlx);
+    mlx_loop(mlx->mlx); 
 
     return (0);
 }
