@@ -25,11 +25,11 @@
 
 
 
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*mlx_window;
-}t_mlx;
+// typedef struct s_mlx
+// {
+// 	void	*mlx;
+// 	void	*mlx_window;
+// }t_mlx;
 
 typedef struct s_data
 {
@@ -42,7 +42,9 @@ typedef struct s_data
 	int		e_x;
 	int		e_y;
 	int		n_coins;
-	t_mlx	*mlx;
+	//t_mlx	*mlx;
+	void	*mlx;
+	void 	*mlx_window;
 }t_data;
 
 int ft_count_chars();

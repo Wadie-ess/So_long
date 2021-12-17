@@ -19,11 +19,11 @@ void ft_draw_img(t_data *data, char c, int i, int j)
     if (c == 'E')
         file = WALL;
 
-    img = mlx_xpm_file_to_image(data->mlx->mlx, file, &w, &h);
+    img = mlx_xpm_file_to_image(data->mlx, file, &w, &h);
     w = BLOCK_SIZE * i;
     h = BLOCK_SIZE * j;
-    mlx_put_image_to_window(data->mlx->mlx, data->mlx->mlx_window, img, w, h);
-    mlx_destroy_image(data->mlx->mlx, img);
+    mlx_put_image_to_window(data->mlx, data->mlx_window, img, w, h);
+    mlx_destroy_image(data->mlx, img);
 }
 
 void ft_draw_map(t_data *data)
@@ -34,7 +34,7 @@ void ft_draw_map(t_data *data)
     int lines_count = data->lines_count;
     int chars_count = data->chars_count;
     map = data->map;
-    mlx_clear_window(data->mlx->mlx, data->mlx->mlx_window);
+    mlx_clear_window(data->mlx, data->mlx_window);
     while (++i < lines_count)
     {
         j = -1;

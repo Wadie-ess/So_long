@@ -42,7 +42,7 @@ int ft_hook(int keycode, t_data *data)
 {
     if(keycode == KEY_ESC)
     {
-        mlx_destroy_window(data->mlx->mlx, data->mlx->mlx_window);
+        mlx_destroy_window(data->mlx, data->mlx_window);
         exit(0);
     }
     if(keycode == KEY_DOWN)
