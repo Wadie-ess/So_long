@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+/* #include "get_next_line.h"
 #include "so_long.h"
 
 int ft_count_chars()
@@ -40,4 +40,4 @@ char **ft_getmap()
     }
     close(fd);
     return map;
-}
+} */

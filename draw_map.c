@@ -17,7 +17,7 @@ void ft_draw_img(t_data *data, char c, int i, int j)
     if (c == '1')
         file = WALL;
     if (c == 'E')
-        file = WALL;
+        file = EXTI;
 
     img = mlx_xpm_file_to_image(data->mlx, file, &w, &h);
     w = BLOCK_SIZE * i;
