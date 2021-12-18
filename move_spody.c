@@ -17,16 +17,16 @@ void ft_move_player(t_data *data, int direction)
 	data->map[data->p_y][data->p_x] = '0';
 	data->p_y += i;
 	data->p_x += j;
-	/* 	if (data->map[data->p_y][data->p_x] == 'C')
-		data->n_coins--;
+	 	if (data->map[data->p_y][data->p_x] == 'C')
+				data->n_coins--;
 	if (data->map[data->p_y][data->p_x] == 'E')
 	{
 		if (data->n_coins == 0)
 		{
-			mlx_destroy_window(data->mlx->mlx, data->mlx->mlx_win);
+			mlx_destroy_window(data->mlx, data->mlx_window);
 			exit(0);
 		}
-	} */
+	} 
 	data->map[data->p_y][data->p_x] = 'P';
 	ft_draw_map(data);
 }

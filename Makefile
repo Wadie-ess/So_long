@@ -1,7 +1,7 @@
 NAME :=  so_long
 SRC :=  main.c set_map.c draw_map.c map.c get_next_line.c get_next_line_utils.c map_validation.c move_spody.c 
 OBJ := main.o set_map.o draw_map.o map.o get_next_line.o get_next_line_utils.o map_validation.o move_spody.o  
-MAP := maps/map1.ber
+MAP := maps/map.ber
 CC:= gcc
 all: $(NAME)
 
