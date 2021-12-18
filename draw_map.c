@@ -34,7 +34,7 @@ void ft_draw_map(t_data *data)
     int lines_count = data->lines_count;
     int chars_count = data->chars_count;
     map = data->map;
-    mlx_clear_window(data->mlx, data->mlx_window);
+    //mlx_clear_window(data->mlx, data->mlx_window);
     while (++i < lines_count)
     {
         j = -1;

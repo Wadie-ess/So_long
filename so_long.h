@@ -22,13 +22,6 @@
 # define MAP_PATH "maps/map.ber"
 # define BLOCK_SIZE 50
 
-
-
-
-
-
-
-
 typedef struct s_data
 {
 	char	**map;
