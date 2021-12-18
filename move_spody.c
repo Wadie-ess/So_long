@@ -30,10 +30,40 @@ void	ft_move_player(t_data *data, int direction)
 	data->map[data->p_y][data->p_x] = 'P';
 	ft_draw_map(data);
 }
+int ft_can_move(int keycode, t_data *data)
+{	
+	if (keycode == KEY_RIGHT)
+	{
+			if(data->map[data->p_y][data->p_x + 1] == '1')
+				return (0);
+	}
+	if (keycode == KEY_LEFT)
+	{
+			if(data->map[data->p_y][data->p_x - 1] == '1')
+				return (0);
+	}
+	if (keycode == KEY_UP)
+	{
+			if(data->map[data->p_y - 1][data->p_x] == '1')
+				return (0);
+	}
+	if (keycode == KEY_DOWN)
+	{
+			if(data->map[data->p_y + 1][data->p_x] == '1')
+				return (0);
+	}
+	
+	return (1);
+}
+
 int ft_move_hook(int keycode, t_data *data)
 {
     // check if player can move
-    ft_move_player(data, keycode);
+	if(ft_can_move(keycode, data) == 1)
+	{
+		ft_move_player(data, keycode);
+	}
+    
     return (1);
     
 
@@ -53,7 +83,6 @@ int ft_hook(int keycode, t_data *data)
         ft_move_hook(keycode, data);
     if(keycode == KEY_UP)
         ft_move_hook(keycode, data);   
-
 
     return (0);
 }
