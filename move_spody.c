@@ -34,22 +34,22 @@ int ft_can_move(int keycode, t_data *data)
 {
 	if (keycode == KEY_RIGHT)
 	{
-		if (data->map[data->p_y][data->p_x + 1] == '1')
+		if (data->map[data->p_y][data->p_x + 1] == '1' || (data->map[data->p_y][data->p_x + 1] == 'E' && data->n_coins > 0))
 			return (0);
 	}
 	if (keycode == KEY_LEFT)
 	{
-		if (data->map[data->p_y][data->p_x - 1] == '1')
+		if (data->map[data->p_y][data->p_x - 1] == '1' || (data->map[data->p_y][data->p_x - 1] == 'E' && data->n_coins > 0))
 			return (0);
 	}
 	if (keycode == KEY_UP)
 	{
-		if (data->map[data->p_y - 1][data->p_x] == '1')
+		if (data->map[data->p_y - 1][data->p_x] == '1' || (data->map[data->p_y][data->p_x - 1] == 'E' && data->n_coins > 0) )
 			return (0);
 	}
 	if (keycode == KEY_DOWN)
 	{
-		if (data->map[data->p_y + 1][data->p_x] == '1')
+		if (data->map[data->p_y + 1][data->p_x] == '1' || (data->map[data->p_y][data->p_x + 1] == 'E' && data->n_coins > 0))
 			return (0);
 	}
 
