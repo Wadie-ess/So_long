@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <mlx.h>
+#include "get_next_line.h"
 
 # define KEY_UP 13
 # define KEY_DOWN 1
@@ -38,6 +39,8 @@ typedef struct s_data
 }t_data;
 
 int ft_count_chars();
+int ft_check_border(t_data *data);
+void ft_set_map(char *map_path, t_data *data);
 int ft_count_lines();
 void ft_draw_map(t_data *data);
 int validate_map(t_data *data);
@@ -45,5 +48,6 @@ int	validate_map_player(t_data *data);
 int ft_move_hook(int keycode, t_data *data);
 int ft_hook(int keycode, t_data *data);
 void	ft_move_player(t_data *data, int direction);
+int ft_check_map_shape(t_data *data);
 
 #endif
