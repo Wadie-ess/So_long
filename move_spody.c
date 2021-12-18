@@ -62,6 +62,9 @@ int ft_move_hook(int keycode, t_data *data)
 	if (ft_can_move(keycode, data) == 1)
 	{
 		ft_move_player(data, keycode);
+		data->n_moves++;
+		// idk 
+		printf("%d",data->n_moves);
 	}
 
 	return (1);

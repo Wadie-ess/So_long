@@ -34,6 +34,7 @@ typedef struct s_data
 	int		e_x;
 	int		e_y;
 	int		n_coins;
+	int 	n_moves;
 	void	*mlx;
 	void 	*mlx_window;
 }t_data;

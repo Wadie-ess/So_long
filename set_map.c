@@ -6,7 +6,7 @@ void ft_set_map(char *map_path, t_data *data)
     int i;
     int lines_count;
     char    *s;
-
+    data->n_moves = 0;
     lines_count = 0;
     fd = open(map_path, O_RDONLY);
     s = get_next_line(fd);
