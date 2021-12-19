@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
     if(argc != 2)
     {
-        printf("the number of arguments is incorrect\n");
+        printf("The Number of arguments is incorrect\n");
         return (1);
     } 
     t_data data;
