@@ -1,6 +1,5 @@
 #include "so_long.h"
-#include "get_next_line.h"
-void ft_set_map(char *map_path, t_data *data)
+int ft_set_map(t_data *data)
 {
     int fd;
     int i;
@@ -8,7 +7,9 @@ void ft_set_map(char *map_path, t_data *data)
     char    *s;
     data->n_moves = 0;
     lines_count = 0;
-    fd = open(map_path, O_RDONLY);
+    fd = open(data->map_path, O_RDONLY);
+    if(fd == -1)
+        return(0);
     s = get_next_line(fd);
     while (s)
     {
@@ -20,11 +21,12 @@ void ft_set_map(char *map_path, t_data *data)
     data->map = malloc(sizeof(char *) * (lines_count));
     close(fd);
     i = -1;
-    fd = open(map_path, O_RDONLY);
+    fd = open(data->map_path, O_RDONLY);
     while (++i < lines_count && data->map)
         data->map[i] = get_next_line(fd);
     close(fd);
     data->lines_count = lines_count;
     if (data->map)
         data->chars_count = ft_strlen(data->map[i - 1]);
+    return 1;
 }

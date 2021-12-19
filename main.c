@@ -1,14 +1,18 @@
 #include "so_long.h"
-#include <mlx.h>
-#include "get_next_line.h"
 
-int main()
+int main(int argc, char *argv[])
 {
+    if(argc != 2)
+    {
+        printf("the number of arguments is incorrect\n");
+        return (1);
+    } 
     t_data data;
     int window_width;
     int window_height;
-   
-    ft_set_map(MAP_PATH, &data);
+    data.map_path = argv[1];
+    if(ft_set_map(&data) == 0)
+            printf("map not exist! ");
        if(validate_map(&data) == 0)
                 return 0;
     window_height = data.lines_count * BLOCK_SIZE;

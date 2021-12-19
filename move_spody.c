@@ -64,7 +64,7 @@ int ft_move_hook(int keycode, t_data *data)
 		ft_move_player(data, keycode);
 		data->n_moves++;
 		// idk 
-		printf("%d",data->n_moves);
+		printf("%d\n",data->n_moves);
 	}
 
 	return (1);

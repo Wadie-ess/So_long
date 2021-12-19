@@ -88,12 +88,15 @@ int ft_check_map_values(t_data *data)
 		j = -1;
 		while (++j < data->chars_count)
 		{
+			if(data->map[i][j]!= 'C' && data->map[i][j]!= 'P' && data->map[i][j]!= 'E' && data->map[i][j]!= '0' && data->map[i][j]!= '1')
+				return (0);
 			if(data->map[i][j] == 'C')
 				n_coins++;
 			if(data->map[i][j] == 'E')
 				n_exit++;
 			if(data->map[i][j] == 'P')
 				n_player++;
+			
 		}
 	}
 	data->n_coins = n_coins;

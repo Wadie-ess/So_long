@@ -20,7 +20,7 @@
 # define EXTI "assets/exit.xpm"
 # define EXIT_OPEN = "assets/lbab_m7lol.xpm"
 # define BACKGROUND "assets/background.xpm"
-# define MAP_PATH "maps/map.ber"
+//# define MAP_PATH "maps/map.ber"
 # define BLOCK_SIZE 50
 
 typedef struct s_data
@@ -31,24 +31,23 @@ typedef struct s_data
 	int		chars_count;
 	int		p_x;
 	int		p_y;
-	int		e_x;
-	int		e_y;
 	int		n_coins;
 	int 	n_moves;
 	void	*mlx;
 	void 	*mlx_window;
+	char 	*map_path;
 }t_data;
 
 int ft_count_chars();
 int ft_check_border(t_data *data);
-void ft_set_map(char *map_path, t_data *data);
+int ft_set_map(t_data *data);
 int ft_count_lines();
 void ft_draw_map(t_data *data);
 int validate_map(t_data *data);
 int	validate_map_player(t_data *data);
 int ft_move_hook(int keycode, t_data *data);
 int ft_hook(int keycode, t_data *data);
-void	ft_move_player(t_data *data, int direction);
+void ft_move_player(t_data *data, int direction);
 int ft_check_map_shape(t_data *data);
 int ft_check_map_values(t_data *data);
 
