@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
     //printf("%d",data->p_y);
      data.mlx = mlx_init();
     data.mlx_window = mlx_new_window(data.mlx, window_width, window_height, "a7a");
-    mlx_hook(data.mlx_window, 2, 1L << 0, ft_hook, &data);
+    mlx_hook(data.mlx_window, 2, 0, ft_hook, &data);
+    mlx_hook(data.mlx_window, 17, 0, ft_close, &data);
     ft_draw_map(&data);
     mlx_loop(data.mlx); 
 

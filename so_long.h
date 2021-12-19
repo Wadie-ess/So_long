@@ -50,5 +50,6 @@ int ft_hook(int keycode, t_data *data);
 void ft_move_player(t_data *data, int direction);
 int ft_check_map_shape(t_data *data);
 int ft_check_map_values(t_data *data);
+int ft_close(t_data *data);
 
 #endif

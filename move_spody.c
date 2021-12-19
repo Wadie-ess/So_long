@@ -87,3 +87,9 @@ int ft_hook(int keycode, t_data *data)
 
 	return (0);
 }
+int ft_close(t_data *data)
+{
+	mlx_destroy_window(data->mlx, data->mlx_window);
+    exit(0);
+   return (0);
+}
