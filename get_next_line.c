@@ -6,7 +6,7 @@
 /*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 14:15:26 by oessendo          #+#    #+#             */
-/*   Updated: 2021/12/19 00:47:14 by oessendo         ###   ########.fr       */
+/*   Updated: 2021/12/20 13:30:04 by oessendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,19 +98,3 @@ char	*get_next_line(int fd)
 	free(buffer);
 	return (ft_line(&str));
 }
-// test
-/*  #include <fcntl.h> 
-int main()
-{
-	//int fd = open("test.txt", O_RDONLY);
-	//get_next_line(fd); 
-	printf("1 : %s\n",get_next_line(fd));
-	printf("2 : %s\n",get_next_line(fd));
-	printf("3 : %s\n",get_next_line(fd));
-	printf("4 : %s\n",get_next_line(fd));
-	printf("4 : %s\n",get_next_line(fd));
-
-
-	return (0);
-}
- */

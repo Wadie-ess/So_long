@@ -1,12 +1,24 @@
-#ifndef SO_LONG_H
-#define SO_LONG_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/20 15:41:22 by oessendo          #+#    #+#             */
+/*   Updated: 2021/12/20 15:55:20 by oessendo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <mlx.h>
-#include "get_next_line.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <mlx.h>
+# include "get_next_line.h"
 
 # define KEY_UP 13
 # define KEY_DOWN 1
@@ -32,24 +44,24 @@ typedef struct s_data
 	int		p_x;
 	int		p_y;
 	int		n_coins;
-	int 	n_moves;
+	int		n_moves;
 	void	*mlx;
-	void 	*mlx_window;
-	char 	*map_path;
+	void	*mlx_window;
+	char	*map_path;
 }t_data;
 
-int ft_count_chars();
-int ft_check_border(t_data *data);
-int ft_set_map(t_data *data);
-int ft_count_lines();
-void ft_draw_map(t_data *data);
-int validate_map(t_data *data);
-int	validate_map_player(t_data *data);
-int ft_move_hook(int keycode, t_data *data);
-int ft_hook(int keycode, t_data *data);
-void ft_move_player(t_data *data, int direction);
-int ft_check_map_shape(t_data *data);
-int ft_check_map_values(t_data *data);
-int ft_close(t_data *data);
+int		ft_count_chars(void);
+int		ft_check_border(t_data *data);
+int		ft_set_map(t_data *data);
+void	ft_draw_map(t_data *data);
+int		validate_map(t_data *data);
+int		validate_map_player(t_data *data);
+int		ft_move_hook(int keycode, t_data *data);
+int		ft_hook(int keycode, t_data *data);
+void	ft_move_player(t_data *data, int direction);
+int		ft_check_map_shape(t_data *data);
+int		ft_check_map_values(t_data *data);
+int		ft_destroy(t_data *data);
+void	ft_count_lines(t_data *data, int fd);
 
 #endif
