@@ -6,7 +6,7 @@
 /*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:41:22 by oessendo          #+#    #+#             */
-/*   Updated: 2021/12/20 18:21:34 by oessendo         ###   ########.fr       */
+/*   Updated: 2021/12/20 22:55:29 by oessendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@
 # define SPODY "assets/spopi_1.xpm"
 # define WALL "assets/wall.xpm"
 # define EXTI "assets/exit.xpm"
-# define EXIT_OPEN = "assets/lbab_m7lol.xpm"
 # define BACKGROUND "assets/background.xpm"
-//# define MAP_PATH "maps/map.ber"
 # define BLOCK_SIZE 50
 
 typedef struct s_data
