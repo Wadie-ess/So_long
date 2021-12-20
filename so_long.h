@@ -6,7 +6,7 @@
 /*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:41:22 by oessendo          #+#    #+#             */
-/*   Updated: 2021/12/20 15:55:20 by oessendo         ###   ########.fr       */
+/*   Updated: 2021/12/20 18:21:34 by oessendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ int		ft_check_map_shape(t_data *data);
 int		ft_check_map_values(t_data *data);
 int		ft_destroy(t_data *data);
 void	ft_count_lines(t_data *data, int fd);
+char	*ft_strstr(char *str, char *to_find);
+int		ft_check_argument(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 13:30:18 by oessendo          #+#    #+#             */
-/*   Updated: 2021/12/20 14:58:18 by oessendo         ###   ########.fr       */
+/*   Updated: 2021/12/20 18:25:58 by oessendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("The Number of arguments is incorrect\n");
+		printf("Error\nThe Number of arguments is incorrect\n");
 		return (0);
 	}
 	data.map_path = argv[1];
 	if (ft_set_map(&data) == 0)
-		printf("map not exist! ");
+		printf("Error\nmap name or value is not valid!");
 	if (validate_map(&data) == 0)
 		return (0);
 	window_height = data.lines_count * BLOCK_SIZE;
