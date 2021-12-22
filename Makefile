@@ -1,16 +1,14 @@
 NAME :=  so_long
-SRC :=  main.c set_map.c draw_map.c  get_next_line.c get_next_line_utils.c map_validation.c move_spody.c 
-OBJ := main.o set_map.o draw_map.o  get_next_line.o get_next_line_utils.o map_validation.o move_spody.o 
-CC:= gcc
+SRC :=  main.c set_map.c draw_map.c  GNL/get_next_line.c GNL/get_next_line_utils.c map_validation.c move_spody.c 
+OBJ := $(SRC:.c=.o)
+CC	:= gcc
+CFLAGS := -Wall -Wextra -Werror
 all: $(NAME)
 
-%.o: %.c
-	$(CC) -Wall -Wextra -Werror -Imlx  -c $<  -o $@ 
-
 $(NAME):  $(OBJ)
-	$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
+	$(CC) $(CFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
 clean:
-	@rm -f $(OBJ)
+	rm -f $(OBJ)
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 re: fclean all

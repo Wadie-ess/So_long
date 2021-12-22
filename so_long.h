@@ -6,7 +6,7 @@
 /*   By: oessendo <wadieessendoubi@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:41:22 by oessendo          #+#    #+#             */
-/*   Updated: 2021/12/20 22:55:29 by oessendo         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:48:18 by oessendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <mlx.h>
-# include "get_next_line.h"
+# include "GNL/get_next_line.h"
 
 # define KEY_UP 13
 # define KEY_DOWN 1
