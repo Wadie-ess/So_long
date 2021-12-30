@@ -22,7 +22,8 @@ quit the program cleanly
 
 # Game Preview
 
-<img src="spody.gif"  alt="1" width = 800px height = 170px >
+https://user-images.githubusercontent.com/46634285/147780035-2d3a69d1-37cf-40a0-bc90-1f81bd1c3e18.mov
+
 
 # YOU WIN!
 
