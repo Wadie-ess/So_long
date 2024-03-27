@@ -1,6 +1,6 @@
-# SPOODY VS SOPU !
+# 2D Game Build Using the C language
 
-# Goals
+# OverView
 This project’s objectives are similar to all this first year’s objectives: Rigor, use of C, use
 of basic algorithms, information research etc.
 As a graphic design project, so long will enable you to improve your skills in these
@@ -24,7 +24,3 @@ quit the program cleanly
 
 https://user-images.githubusercontent.com/46634285/147780035-2d3a69d1-37cf-40a0-bc90-1f81bd1c3e18.mov
 
-
-# YOU WIN!
-
-<img src="rb7ti.png"  alt="1">
